@@ -1,19 +1,20 @@
 <template>
-  <a-steps :current="1">
-    <a-step>
-      <!-- <span slot="title">Finished</span> -->
-      <template #title>Finished</template>
-      <template #description>
-        <span>This is a description.</span>
-      </template>
-    </a-step>
-    <a-step title="In Progress" sub-title="Left 00:00:08" description="This is a description." />
-    <a-step title="Waiting" description="This is a description." />
-  </a-steps>
+  <div>{{balance}}</div>
 </template>
 
 <script>
+import { ethers } from "ethers";
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  data() {
+    return { balance: 0};
+  },
+  async beforeMount() {
+    const provider = new ethers.providers.Web3Provider(window.ethereum)
+    await provider.send("eth_requestAccounts", []);
+    var address = await provider.getSigner().getAddress()
+    var balance = ethers.utils.formatEther(await provider.getSigner().getBalance())
+    this.balance = balance
+  },
 }
 </script>

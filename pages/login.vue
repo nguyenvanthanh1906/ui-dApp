@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import { ethers } from "ethers";
+
 export default {
   name: "Login",
   data() {
@@ -50,9 +52,10 @@ export default {
     },
     async isEthereumSupported() {
       if (window.ethereum) {
-        window.web3 = new this.$Web3(window.ethereum);
+        const provider = new ethers.providers.Web3Provider(window.ethereum)
+        await provider.send("eth_requestAccounts", []);
         try {
-          await window.ethereum.enable();
+          await provider.getSigner();
           this.$router.push(`/`);
           return true;
         } catch (error) {
