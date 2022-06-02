@@ -16,14 +16,94 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    script: [
+      {
+        src: '/js/jquery.min.js',
+        type: 'text/javascript',
+      },
+      {
+        src: '/js/bootstrap.min.js',
+        type: 'text/javascript',
+      },
+      {
+        src: '/js/bootstrap.bundle.min.js',
+        type: 'text/javascript',
+      },
+      {
+        src: '/js/wow.min.js',
+        type: 'text/javascript',
+      },
+      {
+        src: '/js/jquery.isotope.min.js',
+        type: 'text/javascript',
+      },
+      {
+        src: '/js/easing.js',
+        type: 'text/javascript',
+      },
+      {
+        src: '/js/owl.carousel.js',
+        type: 'text/javascript',
+      },
+      {
+        src: '/js/validation.js',
+        type: 'text/javascript',
+      },
+      {
+        src: '/js/jquery.magnific-popup.min.js',
+        type: 'text/javascript',
+      },
+      {
+        src: '/js/enquire.min.js',
+        type: 'text/javascript',
+      },
+      {
+        src: '/js/jquery.plugin.js',
+        type: 'text/javascript',
+      },
+      {
+        src: '/js/jquery.countTo.js',
+        type: 'text/javascript',
+      },
+      {
+        src: '/js/jquery.countdown.js',
+        type: 'text/javascript',
+      },
+      {
+        src: '/js/jquery.lazy.min.js',
+        type: 'text/javascript',
+      },
+      {
+        src: '/js/jquery.lazy.plugins.min.js',
+        type: 'text/javascript',
+      },
+      {
+        src: '/js/designesia.js',
+        type: 'text/javascript',
+      },
+    ],
+  
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'ant-design-vue/dist/antd.css'
+    'ant-design-vue/dist/antd.css',
+    '~/assets/css/bootstrap.min.css',
+    '~/assets/css/bootstrap-grid.min.css',
+    '~/assets/css/bootstrap-reboot.min.css',
+    '~/assets/css/animate.css',
+    '~/assets/css/owl.carousel.css',
+    '~/assets/css/owl.theme.css',
+    '~/assets/css/owl.transitions.css',
+    '~/assets/css/magnific-popup.css',
+    '~/assets/css/jquery.countdown.css',
+    '~/assets/css/style.css',
+    '~/assets/css/coloring.css',
+    '~/assets/css/colors/scheme-01.css'
   ],
 
+  
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '@/plugins/antd-ui'
